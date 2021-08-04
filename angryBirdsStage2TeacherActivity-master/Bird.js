@@ -1,0 +1,22 @@
+class Bird{
+  //special function that runs when an object is created
+  constructor(x,y){
+    var options = {
+      restitution : 0.8,
+      density :1,
+      friction : 0.04
+    }
+    this.body = Bodies.rectangle (x,y,50,50,options)
+    this.width = 50
+    this.height = 50
+    World.add(world,this.body)
+  }
+  display(){
+    var pos = this.body.position
+    this.body.position.x = mouseX
+    this.body.position.y = mouseY
+    rectMode(CENTER)
+    fill("red")
+    rect(pos.x,pos.y,this.width,this.height)
+  }
+};  
